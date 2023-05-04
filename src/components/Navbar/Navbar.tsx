@@ -2,10 +2,18 @@ import { Flex } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 import ChakraNextImage from '../UI/ChakraNextImage';
+import SearchInput from './SearchInput';
+import RightContent from './RightContent';
 
 const Navbar: React.FC = () => {
   return (
-    <Flex bg='white' height='44px' padding='6px 12px'>
+    <Flex
+      bg='white'
+      height='44px'
+      padding='6px 12px'
+      justify='space-between'
+      align='center'
+    >
       <Flex align='center'>
         <Image
           src='/images/redditFace.svg'
@@ -21,9 +29,9 @@ const Navbar: React.FC = () => {
           display={{ base: 'none', md: 'unset' }}
         />
       </Flex>
-      {/* <Directory />
+      {/* <Directory /> */}
       <SearchInput />
-      <RightContent /> */}
+      <RightContent />
     </Flex>
   );
 };
