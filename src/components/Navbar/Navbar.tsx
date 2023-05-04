@@ -1,11 +1,13 @@
-import { Flex } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Flex, Image } from '@chakra-ui/react';
 import React from 'react';
-import ChakraNextImage from '../UI/ChakraNextImage';
 import SearchInput from './SearchInput';
 import RightContent from './RightContent';
+import { auth } from '@/src/firebase/clientApp';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Navbar: React.FC = () => {
+  const [user, loading, error] = useAuthState(auth);
+
   return (
     <Flex
       bg='white'
@@ -21,7 +23,7 @@ const Navbar: React.FC = () => {
           alt='reddit face'
           width={30}
         />
-        <ChakraNextImage
+        <Image
           src='/images/redditText.svg'
           height={46}
           width={70}
@@ -31,7 +33,7 @@ const Navbar: React.FC = () => {
       </Flex>
       {/* <Directory /> */}
       <SearchInput />
-      <RightContent />
+      <RightContent user={user} />
     </Flex>
   );
 };
