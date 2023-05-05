@@ -25,7 +25,7 @@ const Directory = () => {
           <Flex align='center'>
             <Icon as={TiHome} display={{ base: '1', md: '2' }} fontSize='24' />
             <Flex display={{ base: 'none', lg: 'flex' }}>
-              <Text fontWeight={700} fontSize='10pt'>
+              <Text fontWeight={700} fontSize='10pt' pt='1'>
                 Home
               </Text>
             </Flex>
